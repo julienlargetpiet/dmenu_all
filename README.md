@@ -11,7 +11,7 @@ Bash script to manage your files, run application, run custom scripts and run cu
 
 ## Quick search
 
-     - Example:
+   - Example:
 
            !ssd1/ms
 
@@ -19,7 +19,7 @@ Bash script to manage your files, run application, run custom scripts and run cu
 
 ## Alias for custom scripts
 
-    - Example: 
+   - Example: 
 
            :brave wikipedia.org
 
@@ -69,16 +69,16 @@ Bash script to manage your files, run application, run custom scripts and run cu
              
    -To add one follow these steps:
 
-    - Add in "all_media_read.sh" arround line 104
+   - Add in "all_media_read.sh" arround line 104
 
-        echo "NEW DIRECT PATH" >> ~/all_media/all_media_read.txt
+         echo "NEW DIRECT PATH" >> ~/all_media/all_media_read.txt
 
-     - Add in "all_media_read.sh" arround line 174
+   - Add in "all_media_read.sh" arround line 174
 
-        elif [ "$a"  = "NEW DIRECT PATH" ]
-        then
+         elif [ "$a"  = "NEW DIRECT PATH" ]
+         then
                
-               a=path_you_want
+                a=path_you_want
 
 ## Options
 
