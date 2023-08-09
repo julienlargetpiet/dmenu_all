@@ -13,6 +13,14 @@ Bash script to manage your files, run application, run custom scripts and run cu
   
         mv dmenu_all all_media
 
+## Quick Start
+
+   - run the script
+
+   - enter: FROM and press enter
+
+   - now it should be ready for usage and further configuration
+
 ## Searching files and other
 
    - This script allows to **search files**, and **open them** regarding their extension with the softwares informed in conf variables at the top of "all_media_read.sh"
