@@ -112,7 +112,11 @@ Bash script to manage your files, run application, run custom scripts and run cu
 
                    a=path_you_want
 
-     -Write a command 
+     -Write a command
+
+## Usage
+
+- Bind the run of the script with a programm like xbindkeys or other.
 
    
    
