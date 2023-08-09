@@ -1,6 +1,12 @@
 # dmenu_all
 Bash script to manage your files, run application, run custom scripts and run custom dmenu scripts
 
+## Install
+
+- In ~/
+
+        git clone https://github.com/iro0087/dmenu_all
+
 ## Searching files and other
 
    - This script allows to **search files**, and **open them** regarding their extension with the softwares informed in conf variables at the top of "all_media_read.sh"
@@ -16,6 +22,20 @@ Bash script to manage your files, run application, run custom scripts and run cu
            !ssd1/ms
 
    - You can **directly access** to the file or folder you want specifying "!" at the beginning. When it comes to the **history** of directories or files accessed, the behavior is the same as for the command except that the history file is named "regular.txt"  
+
+## Text editor
+
+   In order to support terminal based text editor such as vim, nvim, nano..., a temporaly file is created named "source_launcher"
+   So edit your .bashrc file and put this at the very top of your .bashrc:
+
+            if [ -f $HOME/source_launcher ]
+            then
+
+                  rm $HOME/source_launcher
+
+                  bash ~/all_media/source_launcher_ex.sh
+
+            fi
 
 ## Alias for custom scripts
 
