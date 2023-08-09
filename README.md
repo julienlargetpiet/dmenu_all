@@ -42,7 +42,7 @@ Bash script to manage your files, run application, run custom scripts and run cu
 
 ## Stay behavior
 
-   - If you want dmenu with this script continue running while openning a file in a certain directory, just edit the file "stay_behavior.txt" following this synthax
+   - If you want this script continue running while openning a file in a certain directory, just edit the file "stay_behavior.txt" following this synthax
 
         - example for directory named ssd1
 
