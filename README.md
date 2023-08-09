@@ -17,6 +17,14 @@ Bash script to manage your files, run application, run custom scripts and run cu
 
    - enter: QUIT and press enter
 
+## Back to last folder
+
+   - enter: BACK and press enter
+
+## Back to ~/
+
+   - enter: FROM and press enter
+
 ## Quick search
 
    - Example:
