@@ -73,8 +73,18 @@ Bash script to manage your files, run application, run custom scripts and run cu
 
         elif [ "$a"  = "NEW DIRECT PATH" ]
         then
+               
+               a=path_you_want
+
+## New Command
+
+   Like the options "STOP" stop the last video or audio you played with this script or "KILL LAST" kills the last process ran with the script, you can add a custom option following these steps: 
+
+   - Do the same as for Quick Access but instead of:
 
                    a=path_you_want
+
+     -Write a command 
 
    
    
