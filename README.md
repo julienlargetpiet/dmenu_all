@@ -6,6 +6,8 @@ Bash script to manage your files, run application, run custom scripts and run cu
 - In ~/
 
         git clone https://github.com/iro0087/dmenu_all
+  
+        mv dmenu_all all_media
 
 ## Searching files and other
 
