@@ -13,7 +13,7 @@ Bash script to manage your files, run application, run custom scripts and run cu
   
         mv dmenu_all all_media
 
-## Quick Start
+## Initialisation
 
    - run the script
 
