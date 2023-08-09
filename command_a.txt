@@ -1,0 +1,15 @@
+:libreoffice
+:brave
+:alacritty
+:st
+:google-chrome-stable
+:brave jlp01.fr
+:brave wikipedia.org
+/home/kvv/
+:zathura https://jlp01.fr/m.pdf
+:google-chrome-stable netflix.com
+:geogebra
+:google-chrome-stable amazon.com
+:brave archlinux.org
+:google-chrome-stable amazon.fr
+:vmpk
