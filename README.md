@@ -5,6 +5,10 @@ Bash script to manage your files, run application, run custom scripts and run cu
 
    - This script allows to **search files**, and **open them** regarding their extension with the softwares informed in conf variables at the top of "all_media_read.sh"
 
+## Quit
+
+   - enter: QUIT and press enter
+
 ## Quick search
 
      - Example:
@@ -76,9 +80,13 @@ Bash script to manage your files, run application, run custom scripts and run cu
                
                a=path_you_want
 
-## New Command
+## Options
 
-   Like the options "STOP" stop the last video or audio you played with this script or "KILL LAST" kills the last process ran with the script, you can add a custom option following these steps: 
+   - "STOP" stop the last video or audio you played with this script
+
+   - KILL LAST" kills the last process ran with the script
+
+## New Options
 
    - Do the same as for Quick Access but instead of:
 
