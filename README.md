@@ -5,11 +5,21 @@ Bash script to manage your files, run application, run custom scripts and run cu
 
    - This script allows to **search files**, and **open them** regarding their extension with the softwares informed in conf variables at the top of "all_media_read.sh"
 
-## Alias for custom scripts
+## Quick search
 
-   - This script allows to **run command** (including app launcher) specified with ":" at the beginning of each one. If the command is not found it will indicate you that there is an error. If the command exist, it will be written in your **history** of command (if not already the case) to the file "command_a.txt". Basically all command can be run.
+     - Example:
+
+           !ssd1/ms
 
    - You can **directly access** to the file or folder you want specifying "!" at the beginning. When it comes to the **history** of directories or files accessed, the behavior is the same as for the command except that the history file is named "regular.txt"  
+
+## Alias for custom scripts
+
+    - Example: 
+
+           :brave wikipedia.org
+
+   - This script allows to **run command** (including app launcher) specified with ":" at the beginning of each one. If the command is not found it will indicate you that there is an error. If the command exist, it will be written in your **history** of command (if not already the case) to the file "command_a.txt". Basically all command can be run.
 
    - You can run **custom script with aliases** if you create a file in this programm folder following this synthax:
      
@@ -47,10 +57,21 @@ Bash script to manage your files, run application, run custom scripts and run cu
         - example for directory named ssd1
 
                  /home/$USER/ssd1
-                 /home/$USER//ssd1 
-             
+                 /home/$USER//ssd1
 
-     
+## Quick Access
+
+   Like "PLAYLIST" option do, it direct automatically in your playlist path indicated in the **conf variables**
+             
+   -To add one follow these steps:
+
+
+     - Add in "all_media_read.sh"
+
+        elif [ "$a"  = "NEW DIRECT PATH" ]
+        then
+
+                   a=path_you_want
 
    
    
