@@ -47,13 +47,15 @@ Bash script to manage your files, run application, run custom scripts and run cu
 
             fi
 
-## Alias for custom scripts
+## Command
 
    - Example: 
 
            :brave wikipedia.org
 
    - This script allows to **run command** (including app launcher) specified with ":" at the beginning of each one. If the command is not found it will indicate you that there is an error. If the command exist, it will be written in your **history** of command (if not already the case) to the file "command_a.txt". Basically all command can be run.
+
+## Alias for custom scripts
 
    - You can run **custom script with aliases** if you create a file in this programm folder following this synthax:
      
@@ -62,6 +64,10 @@ Bash script to manage your files, run application, run custom scripts and run cu
    After that, write: "bash _path of the custom script_" in the created file
    
    Now you can run your custom script from dmenu with all options you want to add!
+
+-Example
+
+        ;alias -option whatever...
 
 ## Others custom dmenu scripts
 
