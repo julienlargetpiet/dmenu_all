@@ -1,4 +1,4 @@
-# dmenu_all
+# all_media
 Bash script to manage your files, run application, run custom scripts and run custom dmenu scripts
 
 ## Install
