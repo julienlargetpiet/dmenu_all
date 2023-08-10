@@ -3,6 +3,7 @@
 ###CONF VARIABLES###
 
 text_editor=nvim
+gui_text_editor_status="no" # is your text editor gui based ?
 image_viewer=sxiv
 pdf_viewer=zathura
 browser=brave
@@ -15,7 +16,7 @@ playlist_path=~/ssd1/ms/
 quit_on_run="yes"
 sound_effect="yes"
 on_track="yes"
-save_on_quit="yes"
+save_on_quit="no"
 
 ###################
 
@@ -178,17 +179,6 @@ do
 
                 echo $a > ~/all_media/save_on_quit.txt
 
-                dir_in=$(dirname $a)
-
-                unquit_exception=$(if grep -q "$dir_in" ~/all_media/stay_behavior.txt; then echo "yes"; else echo "no"; fi)
-
-                if [ "$quit_on_run" = "yes" ] && [ "$unquit_exception" = "no" ]
-                then
-
-                        exit 0
-
-                fi
-
         elif [ $frst = "!" ]
         then
 
@@ -349,19 +339,28 @@ do
                                 elif [[ -f $a ]]
                                 then
 
-                                        touch ~/source_launcher
+                                        if [ "$gui_text_editor_status" = "no" ]
+                                        then
 
-                                        echo "$text_editor $a" > ~/all_media/source_launcher_ex.sh
+                                                touch ~/source_launcher
 
-                                        $terminal_emulator &
+                                                echo "$text_editor $a" > ~/all_media/source_launcher_ex.sh
 
-                                        pid_last=$!
+                                                $terminal_emulator &
 
-                                        echo "kill $pid_last" >> ~/all_media/source_launcher_ex.sh
+                                                pid_last=$!
 
-                                        dir_in=$(dirname $a)
+                                                echo "kill $pid_last" >> ~/all_media/source_launcher_ex.sh
 
-                                        unquit_exception=$(if grep -q "$dir_in" ~/all_media/stay_behavior.txt; then echo "yes"; else echo "no"; fi)
+                                                dir_in=$(dirname $a)
+
+                                                unquit_exception=$(if grep -q "$dir_in" ~/all_media/stay_behavior.txt; then echo "yes"; else echo "no"; fi)
+
+                                        else
+
+                                                $text_editor $a
+
+                                        fi
 
                                         if [ "$quit_on_run" = "yes" ] && [ "$unquit_exception" = "no" ]
                                         then
@@ -641,19 +640,28 @@ do
         elif [[ -f $a ]]
         then
 
-                touch ~/source_launcher
+                if [ "$gui_text_editor_status" = "no" ]
+                then
 
-                echo "$text_editor $a" > ~/all_media/source_launcher_ex.sh
+                        touch ~/source_launcher
 
-                $terminal_emulator &
+                        echo "$text_editor $a" > ~/all_media/source_launcher_ex.sh
 
-                pid_last=$!
+                        $terminal_emulator &
 
-                echo "kill $pid_last" >> ~/all_media/source_launcher_ex.sh
+                        pid_last=$!
 
-                dir_in=$(dirname $a)
+                        echo "kill $pid_last" >> ~/all_media/source_launcher_ex.sh
 
-                unquit_exception=$(if grep -q "$dir_in" ~/all_media/stay_behavior.txt; then echo "yes"; else echo "no"; fi)
+                        dir_in=$(dirname $a)
+
+                        unquit_exception=$(if grep -q "$dir_in" ~/all_media/stay_behavior.txt; then echo "yes"; else echo "no"; fi)
+
+                else
+
+                        $text_editor $a
+
+                fi
 
                 if [ "$quit_on_run" = "yes" ] && [ "$unquit_exception" = "no" ]
                 then
