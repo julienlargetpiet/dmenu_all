@@ -62,6 +62,8 @@ recheck () {
 
 }
 
+echo "" > ~/all_media/last_process.txt
+
 if [[ "$save_on_quit" = "yes" ]]
 then
 
@@ -76,6 +78,8 @@ fi
 echo $a > ~/all_media/history_list.txt
 
 echo $a > ~/all_media/save_on_quit.txt
+
+dir_in=$a
 
 while true
 do
@@ -145,9 +149,31 @@ do
         elif [[ "$a" = "KILL LAST" ]]
         then
 
-                kill $(cat ~/all_media/last_process.txt)
+                max_line=$(cat ~/all_media/last_process.txt | wc -l)
 
-                a=$dir_in/
+                echo $dir_in
+
+                if [ "$max_line" -ne "1" ]
+                then
+
+                        last_process=$(sed -n ${max_line},${max_line}p ~/all_media/last_process.txt)
+
+                        kill $last_process
+
+                        sed -i "${max_line},${max_line}d" ~/all_media/last_process.txt
+
+                else
+
+                        if [ "$sound_effect" = "yes" ]
+                        then
+
+                                python3 ~/all_media/error_play.py &
+
+                        fi
+
+                fi
+
+                a=$dir_in
 
         elif [[ "$a" = "STOP" ]]
         then
@@ -208,7 +234,7 @@ do
 
                                         $image_viewer $a &
 
-                                        echo $! > ~/all_media/last_process.txt
+                                        echo $! >> ~/all_media/last_process.txt
 
                                         dir_in=$(dirname $a)
 
@@ -234,7 +260,7 @@ do
 
                                         $media_player $a & 
 
-                                        echo $! > ~/all_media/last_process.txt
+                                        echo $! >> ~/all_media/last_process.txt
 
                                         echo $! > ~/all_media/last_music.txt
 
@@ -269,7 +295,7 @@ do
 
                                         $document_reader $a &
 
-                                        echo $! > ~/all_media/last_process.txt
+                                        echo $! >> ~/all_media/last_process.txt
 
                                         dir_in=$(dirname $a)
 
@@ -293,7 +319,7 @@ do
 
                                         $pdf_viewer $a &
 
-                                        echo $! > ~/all_media/last_process.txt
+                                        echo $! >> ~/all_media/last_process.txt
 
                                         dir_in=$(dirname $a)
 
@@ -317,7 +343,7 @@ do
 
                                         $browser $a &
 
-                                        echo $! > ~/all_media/last_process.txt
+                                        echo $! >> ~/all_media/last_process.txt
 
                                         dir_in=$(dirname $a)
 
@@ -505,15 +531,11 @@ do
 
                 $image_viewer $a &
 
-                echo $! > ~/all_media/last_process.txt
+                echo $! >> ~/all_media/last_process.txt
 
                 dir_in=$(dirname $a)
 
-                echo $dir_in
-
                 unquit_exception=$(if grep -q "$dir_in" ~/all_media/stay_behavior.txt; then echo "yes"; else echo "no"; fi)
-
-                echo "he2 $unquit_exception $dir_in"
 
                 if [ "$quit_on_run" = "yes" ] && [ "$unquit_exception" = "no" ]
                 then
@@ -535,7 +557,7 @@ do
 
                 $media_player $a & 
 
-                echo $! > ~/all_media/last_process.txt
+                echo $! >> ~/all_media/last_process.txt
 
                 echo $! > ~/all_media/last_music.txt
 
@@ -570,7 +592,7 @@ do
 
                 $document_reader $a &
 
-                echo $! > ~/all_media/last_process.txt
+                echo $! >> ~/all_media/last_process.txt
 
                 dir_in=$(dirname $a)
 
@@ -594,7 +616,7 @@ do
 
                 $pdf_viewer $a &
 
-                echo $! > ~/all_media/last_process.txt
+                echo $! >> ~/all_media/last_process.txt
 
                 dir_in=$(dirname $a)
 
@@ -618,7 +640,7 @@ do
 
                 $browser $a &
 
-                echo $! > ~/all_media/last_process.txt
+                echo $! >> ~/all_media/last_process.txt
 
                 dir_in=$(dirname $a)
 
@@ -681,6 +703,8 @@ do
                 echo $a >> ~/all_media/history_list.txt
 
                 echo $a > ~/all_media/save_on_quit.txt
+
+                dir_in=$a
 
         fi
 
