@@ -212,15 +212,6 @@ do
 
                 n_com=${a:1:$lnght}
 
-                condition=$(if grep -q "$a" ~/all_media/regular.txt; then echo "yes"; fi)
-
-                if [ "$condition" = "" ]
-                then
-
-                        echo $a >> ~/all_media/regular.txt
-
-                fi
-
                 if [ -d $HOME/$n_com ] || [ -f $HOME/$n_com ]
                 then
 
@@ -409,6 +400,15 @@ do
                                 a=~/$n_com
 
                                 echo $a > ~/all_media/save_on_quit.txt
+
+                        fi
+
+                        condition=$(if grep -q "$a" ~/all_media/regular.txt; then echo "yes"; fi)
+
+                        if [ "$condition" = "" ]
+                        then
+
+                                echo $a >> ~/all_media/regular.txt
 
                         fi
 
