@@ -460,7 +460,7 @@ do
 
                         echo $alias_com
 
-                        echo "$alias_com$arguments" > ~/all_media/command_alias.sh
+                        echo "$alias_com $arguments" > ~/all_media/command_alias.sh
 
                         bash ~/all_media/command_alias.sh &
 
