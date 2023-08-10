@@ -21,6 +21,8 @@ Bash script to manage your files, run application, run custom scripts and run cu
 
    - now it should be ready for usage and further configuration
 
+   - Make sure to edit the configuration variable present at the top of "all_media_read.sh" to your needs
+
 ## Searching files and other
 
    - This script allows to **search files**, and **open them** regarding their extension with the softwares informed in conf variables at the top of "all_media_read.sh"
