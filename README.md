@@ -76,6 +76,8 @@ Bash script to manage your files, run application, run custom scripts and run cu
      **alias_you_want.als**
      
    After that, write: "bash _path of the custom script_" in the created file
+
+   - Then, add the alias name in the file "all_alias.txt"
    
    Now you can run your custom script from dmenu with all options you want to add!
 
