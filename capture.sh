@@ -1,9 +1,21 @@
 #!/bin/bash
 
-nb=$(ls ~/all_media/screenshots/*jpg | wc -l)
+if [[ -d ~/all_media/screenshots ]]
+then
 
-scrot ~/all_media/screenshots/${nb}.jpg
+        nb=$(ls ~/all_media/screenshots/*jpg | wc -l)
 
-notify-send "Capture d'écran" "${nb}.jpg"
+        scrot ~/all_media/screenshots/${nb}.jpg
 
-python3 ~/all_media/play.py
+        notify-send "Capture d'écran" "${nb}.jpg"
+
+        python3 ~/all_media/play.py
+
+else 
+
+        mkdir ~/all_media/screenshots
+
+        touch ~/all_media/screenshots/0.jpg
+
+fi
+
