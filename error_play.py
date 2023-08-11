@@ -2,4 +2,8 @@
 
 from playsound import playsound
 
-playsound('error.wav')
+import os
+
+path=os.path.abspath(os.path.expanduser(os.path.expandvars("~/all_media/error.wav")))
+
+playsound(path)
