@@ -432,18 +432,20 @@ do
                         
                         else
 
+                                a_origin=$a
+
                                 a=~/$n_com
 
                                 echo $a > ~/all_media/save_on_quit.txt
 
                         fi
 
-                        condition=$(if grep -q "$a" ~/all_media/regular.txt; then echo "yes"; fi)
+                        condition=$(if grep -q "$a_origin" ~/all_media/regular.txt; then echo "yes"; fi)
 
                         if [ "$condition" = "" ]
                         then
 
-                                echo $a >> ~/all_media/regular.txt
+                                echo $a_origin >> ~/all_media/regular.txt
 
                         fi
 
