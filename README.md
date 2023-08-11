@@ -3,9 +3,13 @@ Bash script to manage your files, run application, run custom scripts... in dmen
 
 ## Requirements
 
-        - pip install playsound
+        - python3
 
-        - betterlockscreen (optional)
+        - pip install playsound (to get sound effect)
+
+        - betterlockscreen (screenlocker and optional)
+
+        - scrot (to be able to take screenshots)
 
 ## Install
 
