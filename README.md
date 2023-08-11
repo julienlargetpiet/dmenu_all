@@ -163,5 +163,8 @@ Bash script to manage your files, run application, run custom scripts... in dmen
 
 - Bind the run of the script with a programm like xbindkeys or other.
 
+## Troubleshooting 
+
+- If you type a name that does not exist (basically when you have no longer proposals ), you come into the situation where you no longer see your files and directories, just type "FROM" and press enter which will solve the problem 
    
    
