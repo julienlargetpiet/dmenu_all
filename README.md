@@ -1,5 +1,5 @@
 # all_media
-Bash script to manage your files, run application, run custom scripts... in dmenu or rofi.
+Bash script to manage your files, run application, run custom scripts... in dmenu or rofi, depending on what software you put in "launcher.txt"
 
 ## Requirements
 
