@@ -3,6 +3,8 @@ Bash script to manage your files, run application, run custom scripts... in dmen
 
 ## Requirements
 
+        - pip install playsound
+
         - betterlockscreen (optional)
 
 ## Install
