@@ -59,13 +59,14 @@ Bash script to manage your files, run application, run custom scripts... in dmen
 
 ## Text editor
 
-   In order to support terminal based text editor such as vim, nvim, nano..., a temporaly file is created named "source_launcher"
-   So edit your .bashrc file and put this at the very top of your .bashrc:
+   In order to support terminal based text editor such as vim, nvim, nano..., edit your .bashrc file and put this at the very top of your .bashrc:
 
-            if [ -f $HOME/source_launcher ]
+             decision=$(cat ~/all_media/source_launcher_decision.txt)
+
+            if [ "$decision" = "yes" ]
             then
 
-                  rm $HOME/source_launcher
+                  echo "no" > ~/all_media/source_launcher_decision.txt
 
                   bash ~/all_media/source_launcher_ex.sh
 
