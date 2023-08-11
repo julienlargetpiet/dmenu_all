@@ -1,0 +1,5 @@
+suspend
+poweroff
+lock
+reboot
+CANCEL
