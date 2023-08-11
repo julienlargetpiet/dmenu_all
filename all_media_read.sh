@@ -2,6 +2,7 @@
 
 ###CONF VARIABLES###
 
+launcher=$(cat ~/all_media/launcher.txt)
 text_editor=nvim
 gui_text_editor_status="no" # is your text editor gui based ?
 image_viewer=sxiv
@@ -108,7 +109,18 @@ do
 
         echo "SYSTEM" >> ~/all_media/all_media_read.txt
 
-        a=$(cat ~/all_media/all_media_read.txt | dmenu -l 20 -p "File manager")
+        echo "SCREENSHOT" >> ~/all_media/all_media_read.txt
+
+        if [ "$launcher" = "dmenu" ]
+        then
+
+                a=$(cat ~/all_media/all_media_read.txt | dmenu -l 20 -p "File Manager")
+
+        else #[ "$launcher" = "rofi" ]
+
+                a=$(cat ~/all_media/all_media_read.txt | rofi -dmenu -p "File Manager")
+
+        fi
 
         ext=${a##*.}
 
@@ -127,6 +139,13 @@ do
                 echo $a >> ~/all_media/history_list.txt
 
                 echo $a > ~/all_media/save_on_quit.txt
+
+        elif [[ "$a" = "SCREENSHOT" ]]
+        then
+
+                bash ~/all_media/capture.sh
+
+                exit 0
 
         elif [[ "$a" = "SYSTEM" ]]
         then
