@@ -21,6 +21,13 @@ save_on_quit="no"
 
 ###################
 
+if [ "$sound_effect" = "yes" ]
+then
+
+        python3 ~/all_media/start_up.py &
+
+fi
+
 recheck () {
 
         max_line=$(cat ~/all_media/stay_behavior.txt | wc -l)
@@ -378,7 +385,7 @@ do
                                         if [ "$gui_text_editor_status" = "no" ]
                                         then
 
-                                                touch ~/source_launcher
+                                                echo "yes" >  ~/all_media/source_launcher_decision.txt
 
                                                 echo "$text_editor $a" > ~/all_media/source_launcher_ex.sh
 
@@ -684,7 +691,7 @@ do
                 if [ "$gui_text_editor_status" = "no" ]
                 then
 
-                        touch ~/source_launcher
+                        echo "yes" >  ~/all_media/source_launcher_decision.txt
 
                         echo "$text_editor $a" > ~/all_media/source_launcher_ex.sh
 
