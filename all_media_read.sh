@@ -244,6 +244,15 @@ do
                         if [ -f $HOME/$n_com ]
                         then
 
+                                condition=$(if grep -q "$a" ~/all_media/regular.txt; then echo "yes"; fi)
+
+                                if [ "$condition" = "" ]
+                                then
+
+                                        echo $a >> ~/all_media/regular.txt
+
+                                fi
+
                                 a=~/$n_com
 
                                 if [ $ext = "jpg" ] || [ $ext = "png" ] || [ $ext = "svg" ] || [ $ext = "gif" ] || [ $ext = "jpeg" ]
@@ -366,7 +375,7 @@ do
 
                                         unquit_exception=$(if grep -q "$dir_in" ~/all_media/stay_behavior.txt; then echo "yes"; else echo "no"; fi)
 
-                                        if [ "$quit_on_run" = "yes" ] [ "$unquit_exception" = "no" ]
+                                        if [ "$quit_on_run" = "yes" ] && [ "$unquit_exception" = "no" ]
                                         then
 
                                                 exit 0
@@ -395,15 +404,15 @@ do
 
                                                 echo "kill $pid_last" >> ~/all_media/source_launcher_ex.sh
 
-                                                dir_in=$(dirname $a)
-
-                                                unquit_exception=$(if grep -q "$dir_in" ~/all_media/stay_behavior.txt; then echo "yes"; else echo "no"; fi)
-
                                         else
 
                                                 $text_editor $a
 
                                         fi
+
+                                        dir_in=$(dirname $a)
+
+                                        unquit_exception=$(if grep -q "$dir_in" ~/all_media/stay_behavior.txt; then echo "yes"; else echo "no"; fi)
 
                                         if [ "$quit_on_run" = "yes" ] && [ "$unquit_exception" = "no" ]
                                         then
@@ -672,7 +681,7 @@ do
 
                 unquit_exception=$(if grep -q "$dir_in" ~/all_media/stay_behavior.txt; then echo "yes"; else echo "no"; fi)
 
-                if [ "$quit_on_run" = "yes" ] [ "$unquit_exception" = "no" ]
+                if [ "$quit_on_run" = "yes" ] && [ "$unquit_exception" = "no" ]
                 then
 
                         exit 0
@@ -701,15 +710,15 @@ do
 
                         echo "kill $pid_last" >> ~/all_media/source_launcher_ex.sh
 
-                        dir_in=$(dirname $a)
-
-                        unquit_exception=$(if grep -q "$dir_in" ~/all_media/stay_behavior.txt; then echo "yes"; else echo "no"; fi)
-
                 else
 
                         $text_editor $a
 
                 fi
+
+                dir_in=$(dirname $a)
+
+                unquit_exception=$(if grep -q "$dir_in" ~/all_media/stay_behavior.txt; then echo "yes"; else echo "no"; fi)
 
                 if [ "$quit_on_run" = "yes" ] && [ "$unquit_exception" = "no" ]
                 then
