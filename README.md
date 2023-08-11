@@ -1,9 +1,9 @@
 # all_media
-Bash script to manage your files, run application, run custom scripts and run custom dmenu scripts
+Bash script to manage your files, run application, run custom scripts... in dmenu or rofi.
 
 ## Requirements
 
-        - betterlockscreen
+        - betterlockscreen (optional)
 
 ## Install
 
@@ -22,6 +22,10 @@ Bash script to manage your files, run application, run custom scripts and run cu
    - now it should be ready for usage and further configuration
 
    - Make sure to edit the configuration variable present at the top of "all_media_read.sh" to your needs
+
+## Change launcher
+
+- Edit the file "launcher.txt"
 
 ## Searching files and other
 
