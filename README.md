@@ -85,6 +85,8 @@ Bash script to manage your files, run application, run custom scripts... in dmen
    
    Now you can run your custom script from dmenu with all options you want to add!
 
+   The only alias for custom script added is called "manf" that allows you to see man pages in pdf with your pdf viewer. Up to you to add others aliases for others scripts:)
+
 -Example
 
         ;alias -option whatever...
