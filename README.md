@@ -1,6 +1,9 @@
 # all_media
 Bash script to manage your files, run application, run custom scripts... in dmenu or rofi, depending on what software you put in "launcher.txt"
 
+![repres2_001](https://github.com/iro0087/dmenu_all/assets/114911243/0bbd5d6d-c0fa-4381-8606-ab0316cbb728)
+
+
 ## Requirements
 
         - python3
