@@ -61,7 +61,7 @@ recheck () {
 
         done
 
-        if [ "$keep_running" = "no" ]
+        if [ "$keep_running" = "no" ] && [ "$quit_on_run" = "yes" ]
         then
 
                 exit 0
