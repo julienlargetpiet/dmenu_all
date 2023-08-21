@@ -21,13 +21,6 @@ save_on_quit="no"
 
 ###################
 
-#if [ "$sound_effect" = "yes" ]
-#then
-#
-#        python3 ~/all_media/start_up.py &
-#
-#fi
-
 recheck () {
 
         max_line=$(cat ~/all_media/stay_behavior.txt | wc -l)
@@ -93,8 +86,6 @@ if [ "$sound_effect" = "yes" ]
 then
 
         bash ~/all_media/launcher.sh
-
-        #python3 ~/all_media/start_up.py &
 
 fi
 
@@ -203,8 +194,6 @@ do
                         then
 
                                 bash ~/all_media/errorer.sh &
-
-                                #python3 ~/all_media/error_play.py &
 
                         fi
 
@@ -466,8 +455,6 @@ do
                         then 
                         
                                 bash ~/all_media/errorer.sh &
-
-                                #python3 ~/all_media/error_play.py &
                         
                         fi
 
@@ -550,9 +537,6 @@ do
                         then 
                         
                                 bash ~/all_media/errorer.sh &
-
-
-                                #python3 ~/all_media/error_play.py &
                         
                         fi
 
