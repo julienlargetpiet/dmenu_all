@@ -21,13 +21,6 @@ save_on_quit="no"
 
 ###################
 
-if [ "$sound_effect" = "yes" ]
-then
-
-        python3 ~/all_media/start_up.py &
-
-fi
-
 recheck () {
 
         max_line=$(cat ~/all_media/stay_behavior.txt | wc -l)
@@ -88,6 +81,13 @@ echo $a > ~/all_media/history_list.txt
 echo $a > ~/all_media/save_on_quit.txt
 
 dir_in=$a
+
+if [ "$sound_effect" = "yes" ]
+then
+
+        python3 ~/all_media/start_up.py &
+
+fi
 
 while true
 do
