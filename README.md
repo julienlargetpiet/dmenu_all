@@ -160,12 +160,22 @@ Bash script to manage your files, run application, run custom scripts... in dmen
 
      -Write a command
 
+## Basic _direct_ commands support
+
+This programm support touch, cp, mv and cp in the current directory. To use these command, put an asterisk at the beginning of each _direct_ command
+
+Example:
+
+                *mv file_to_change_name new_file
+
 ## Usage
 
 - Bind the run of the script with a programm like xbindkeys or other.
 
 ## Troubleshooting 
 
-- If you type a name that does not exist (basically when you have no longer proposals ), you come into the situation where you no longer see your files and directories, just type "FROM" and press enter which will solve the problem 
+- If you type a name that does not exist (basically when you have no longer proposals ), you come into the situation where you no longer see your files and directories, just type "FROM" and press enter which will solve the problem
+
+- This programm does not accpept the apostrophe in the file name 
    
    
