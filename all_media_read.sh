@@ -21,6 +21,13 @@ save_on_quit="no"
 
 ###################
 
+#if [ "$sound_effect" = "yes" ]
+#then
+#
+#        python3 ~/all_media/start_up.py &
+#
+#fi
+
 recheck () {
 
         max_line=$(cat ~/all_media/stay_behavior.txt | wc -l)
@@ -85,7 +92,9 @@ dir_in=$a
 if [ "$sound_effect" = "yes" ]
 then
 
-        python3 ~/all_media/start_up.py &
+        bash ~/all_media/launcher.sh
+
+        #python3 ~/all_media/start_up.py &
 
 fi
 
@@ -193,7 +202,9 @@ do
                         if [ "$sound_effect" = "yes" ]
                         then
 
-                                python3 ~/all_media/error_play.py &
+                                bash ~/all_media/errorer.sh &
+
+                                #python3 ~/all_media/error_play.py &
 
                         fi
 
@@ -454,13 +465,20 @@ do
                         if [ "$sound_effect" = "yes" ] 
                         then 
                         
-                                python3 ~/all_media/error_play.py &
+                                bash ~/all_media/errorer.sh &
+
+                                #python3 ~/all_media/error_play.py &
                         
                         fi
 
                         a=~/
 
                 fi
+
+        elif [ "$frst" = "*" ]
+        then
+
+                echo "e" > /dev/null
 
         elif [ "$frst" = ";" ]
         then
@@ -494,8 +512,6 @@ do
                         fi
 
                         alias_com=$(cat ~/all_media/$s2.als)
-
-                        echo $alias_com
 
                         echo "$alias_com $arguments" > ~/all_media/command_alias.sh
 
@@ -533,7 +549,10 @@ do
                         if [ "$sound_effect" = "yes" ] 
                         then 
                         
-                                python3 ~/all_media/error_play.py &
+                                bash ~/all_media/errorer.sh &
+
+
+                                #python3 ~/all_media/error_play.py &
                         
                         fi
 
