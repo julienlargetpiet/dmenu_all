@@ -455,7 +455,7 @@ do
                         then 
                         
                                 bash ~/all_media/errorer.sh &
-                        
+
                         fi
 
                         a=~/
@@ -465,7 +465,119 @@ do
         elif [ "$frst" = "*" ]
         then
 
-                echo "e" > /dev/null
+                filtered_com=$(echo $a | cut -d " " -f 1)
+
+                lnght=${#filtered_com}
+
+                filtered_com=${filtered_com:1:$lnght}
+
+                if [ "$filtered_com" = "mv" ]
+                then
+
+                        arg_f=$(echo $a | cut -d " " -f 2)
+
+                        existenz=$(if [ -f $dir_in/$arg_f ]; then echo "yes"; else echo "no"; fi)
+
+                        if [ "$existenz" = "no" ]
+                        then
+
+                                if [ "$sound_effect" = "yes" ]
+                                then 
+
+                                        bash ~/all_media/errorer.sh &
+
+                                fi
+
+                                a=~/
+
+                        else
+
+                                arg_s=$(echo $a | cut -d " " -f 3)
+
+                                mv $dir_in/$arg_f $dir_in/$arg_s
+
+                                exit 0
+
+                        fi
+
+                fi
+
+                if [ "$filtered_com" = "cp" ]
+                then
+
+                        arg_f=$(echo $a | cut -d " " -f 2)
+
+                        existenz=$(if [ -f $dir_in/$arg_f ]; then echo "yes"; else echo "no"; fi)
+
+                        if [ "$existenz" = "no" ]
+                        then
+
+                                if [ "$sound_effect" = "yes" ]
+                                then 
+
+                                        bash ~/all_media/errorer.sh &
+
+                                fi
+
+                                a=~/
+
+                        else
+
+                                arg_s=$(echo $a | cut -d " " -f 3)
+
+                                cp $dir_in/$arg_f $dir_in/$arg_s
+
+                                exit 0
+
+                        fi
+
+                fi
+
+                if [ "$filtered_com" = "rm" ]
+                then
+
+                        arg_f=$(echo $a | cut -d " " -f 2)
+
+                        existenz=$(if [ -f $dir_in/$arg_f ]; then echo "yes"; else echo "no"; fi)
+
+                        if [ "$existenz" = "no" ]
+                        then
+
+                                if [ "$sound_effect" = "yes" ]
+                                then 
+
+                                        bash ~/all_media/errorer.sh &
+
+                                fi
+
+                                a=~/
+
+                        else
+
+                                rm $dir_in/$arg_f 
+
+                                exit 0
+
+                        fi
+
+
+                fi
+
+                if [ "$filtered_com" = "touch" ]
+                then
+
+                        echo "ok"
+
+                        arg_f=$(echo $a | cut -d " " -f 2)
+
+                        echo $dir_in/$arg_f 
+
+                        touch $dir_in/$arg_f 
+
+                        exit 0
+
+
+                fi
 
         elif [ "$frst" = ";" ]
         then
@@ -537,7 +649,7 @@ do
                         then 
                         
                                 bash ~/all_media/errorer.sh &
-                        
+
                         fi
 
                         err_rtrn="yes"
