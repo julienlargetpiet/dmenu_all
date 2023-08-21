@@ -6,6 +6,8 @@ Bash script to manage your files, run application, run custom scripts... in dmen
 
 ## Requirements
 
+        - mpv
+
         - betterlockscreen (screenlocker and optional)
 
         - scrot (to be able to take screenshots)
