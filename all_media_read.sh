@@ -85,7 +85,7 @@ dir_in=$a
 if [ "$sound_effect" = "yes" ]
 then
 
-        bash ~/all_media/launcher.sh
+        bash ~/all_media/launcher.sh &
 
 fi
 
