@@ -1,3 +1,3 @@
 #!/bin/bash
 
-mpv ~/all_media/lnch.wav &
+mpv ~/all_media/lnch.wav 
