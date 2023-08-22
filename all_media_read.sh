@@ -568,8 +568,6 @@ do
 
                         arg_f=$(echo $a | cut -d " " -f 2)
 
-                        echo $dir_in/$arg_f 
-
                         touch $dir_in/$arg_f 
 
                         a=$dir_in
