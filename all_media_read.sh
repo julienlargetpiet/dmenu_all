@@ -436,6 +436,8 @@ do
 
                                 a=~/$n_com
 
+                                dir_in=$a
+
                                 echo $a > ~/all_media/save_on_quit.txt
 
                         fi
@@ -567,6 +569,8 @@ do
                 then
 
                         arg_f=$(echo $a | cut -d " " -f 2)
+
+                        echo $dir_in/$arg_f 
 
                         touch $dir_in/$arg_f 
 
