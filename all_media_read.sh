@@ -496,7 +496,7 @@ do
 
                                 mv $dir_in/$arg_f $dir_in/$arg_s
 
-                                exit 0
+                                a=$dir_in
 
                         fi
 
@@ -527,7 +527,7 @@ do
 
                                 cp $dir_in/$arg_f $dir_in/$arg_s
 
-                                exit 0
+                                a=$dir_in
 
                         fi
 
@@ -556,7 +556,7 @@ do
 
                                 rm $dir_in/$arg_f 
 
-                                exit 0
+                                a=$dir_in
 
                         fi
 
@@ -574,7 +574,7 @@ do
 
                         touch $dir_in/$arg_f 
 
-                        exit 0
+                        a=$dir_in
 
 
                 fi
