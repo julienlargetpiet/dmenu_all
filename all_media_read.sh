@@ -566,8 +566,6 @@ do
                 if [ "$filtered_com" = "touch" ]
                 then
 
-                        echo "ok"
-
                         arg_f=$(echo $a | cut -d " " -f 2)
 
                         echo $dir_in/$arg_f 
