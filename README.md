@@ -162,7 +162,7 @@ Bash script to manage your files, run application, run custom scripts... in dmen
 
 ## Basic _direct_ commands support
 
-This programm support touch, cp, mv and cp in the current directory. To use these command, put an asterisk at the beginning of each _direct_ command
+This programm support touch, cp, mv and rm in the current directory. To use these command, put an asterisk at the beginning of each _direct_ command
 
 Example:
 
