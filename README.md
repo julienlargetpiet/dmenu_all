@@ -58,21 +58,6 @@ Bash script to manage your files, run application, run custom scripts... in dmen
 
    - You can **directly access** to the file or folder you want specifying "!" at the beginning. When it comes to the **history** of directories or files accessed, the behavior is the same as for the command except that the history file is named "regular.txt"  
 
-## Text editor
-
-   In order to support terminal based text editor such as vim, nvim, nano..., edit your .bashrc file and put this at the very top of your .bashrc:
-
-             decision=$(cat ~/all_media/source_launcher_decision.txt)
-
-            if [ "$decision" = "yes" ]
-            then
-
-                  echo "no" > ~/all_media/source_launcher_decision.txt
-
-                  bash ~/all_media/source_launcher_ex.sh
-
-            fi
-
 ## Command
 
    - Example: 
