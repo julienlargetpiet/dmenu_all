@@ -118,6 +118,8 @@ do
 
         echo "SCREENSHOT" >> ~/all_media/all_media_read.txt
 
+        echo "CALCURSE" >> ~/all_media/all_media_read.txt
+
         if [ "$launcher" = "dmenu" ]
         then
 
@@ -158,6 +160,13 @@ do
         then
 
                 bash ~/all_media/system_decision.sh
+
+                exit 0
+
+        elif [[ "$a" = "CALCURSE" ]]
+        then
+
+                $terminal_emulator -e calcurse
 
                 exit 0
 
@@ -391,24 +400,26 @@ do
                                 elif [[ -f $a ]]
                                 then
 
-                                        if [ "$gui_text_editor_status" = "no" ]
-                                        then
+#                                        if [ "$gui_text_editor_status" = "no" ]
+#                                        then
+#
+#                                                echo "yes" >  ~/all_media/source_launcher_decision.txt
+#
+#                                                echo "$text_editor $a" > ~/all_media/source_launcher_ex.sh
+#
+#                                                $terminal_emulator &
+#
+#                                                pid_last=$!
+#
+#                                                echo "kill $pid_last" >> ~/all_media/source_launcher_ex.sh
+#
+#                                        else
+#
+#                                                $text_editor $a
+#
+#                                        fi
 
-                                                echo "yes" >  ~/all_media/source_launcher_decision.txt
-
-                                                echo "$text_editor $a" > ~/all_media/source_launcher_ex.sh
-
-                                                $terminal_emulator &
-
-                                                pid_last=$!
-
-                                                echo "kill $pid_last" >> ~/all_media/source_launcher_ex.sh
-
-                                        else
-
-                                                $text_editor $a
-
-                                        fi
+                                        $terminal_emulator -e $text_editor $a
 
                                         dir_in=$(dirname $a)
 
@@ -814,24 +825,26 @@ do
         elif [[ -f $a ]]
         then
 
-                if [ "$gui_text_editor_status" = "no" ]
-                then
+#                if [ "$gui_text_editor_status" = "no" ]
+#                then
+#
+#                        echo "yes" >  ~/all_media/source_launcher_decision.txt
+#
+#                        echo "$text_editor $a" > ~/all_media/source_launcher_ex.sh
+#
+#                        $terminal_emulator &
+#
+#                        pid_last=$!
+#
+#                        echo "kill $pid_last" >> ~/all_media/source_launcher_ex.sh
+#
+#                else
+#
+#                        $text_editor $a
+#
+#                fi
 
-                        echo "yes" >  ~/all_media/source_launcher_decision.txt
-
-                        echo "$text_editor $a" > ~/all_media/source_launcher_ex.sh
-
-                        $terminal_emulator &
-
-                        pid_last=$!
-
-                        echo "kill $pid_last" >> ~/all_media/source_launcher_ex.sh
-
-                else
-
-                        $text_editor $a
-
-                fi
+                $terminal_emulator -e $text_editor $a
 
                 dir_in=$(dirname $a)
 
