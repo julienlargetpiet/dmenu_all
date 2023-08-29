@@ -157,6 +157,14 @@ Example:
 
 - Bind the run of the script with a programm like xbindkeys or other.
 
+## Emojis to keyboard
+
+### Requirements 
+
+        xsel
+
+emojis database is a modified file from: https://www.kaggle.com/datasets/eliasdabbas/emoji-data-descriptions-codepoints
+
 ## Troubleshooting 
 
 - If you type a name that does not exist (basically when you have no longer proposals ), you come into the situation where you no longer see your files and directories, just type "FROM" and press enter which will solve the problem
