@@ -15,6 +15,8 @@ else
 
         echo $a | xsel -b
 
+        #echo $a | xclip 
+
         exit 0
 
         bash ~/all_media/all_media_read.sh 
