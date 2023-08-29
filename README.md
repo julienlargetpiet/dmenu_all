@@ -165,6 +165,8 @@ Example:
 
         xclip (potentially)
 
+See "emojis.sh" for further modifications
+
 emojis database is a modified file from: https://www.kaggle.com/datasets/eliasdabbas/emoji-data-descriptions-codepoints
 
 ## Troubleshooting 
