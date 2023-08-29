@@ -163,6 +163,8 @@ Example:
 
         xsel
 
+        xclip (potentially)
+
 emojis database is a modified file from: https://www.kaggle.com/datasets/eliasdabbas/emoji-data-descriptions-codepoints
 
 ## Troubleshooting 
