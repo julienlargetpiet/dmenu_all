@@ -11,13 +11,14 @@ browser=brave
 media_player=mpv
 terminal_emulator=alacritty
 document_reader=libreoffice
+music_player=mocp
 
 playlist_path=~/ssd1/ms/
 
 quit_on_run="yes"
 sound_effect="yes"
 on_track="yes"
-save_on_quit="no"
+save_on_quit="yes"
 
 ###################
 
@@ -98,6 +99,8 @@ do
 
         cat ~/all_media/command_a.txt >> ~/all_media/all_media_read.txt
 
+        #cat ~/all_media/command_a_v.txt >> ~/all_media/all_media_read.txt
+
         cat ~/all_media/regular.txt >> ~/all_media/all_media_read.txt
 
         cat ~/all_media/command_alias.txt >> ~/all_media/all_media_read.txt
@@ -120,6 +123,12 @@ do
 
         echo "CALCURSE" >> ~/all_media/all_media_read.txt
 
+        echo "BLACK SCREEN" >> ~/all_media/all_media_read.txt
+
+        echo "MUSIC!!!" >> ~/all_media/all_media_read.txt
+
+        echo "EMOJIS" >> ~/all_media/all_media_read.txt
+
         if [ "$launcher" = "dmenu" ]
         then
 
@@ -140,6 +149,13 @@ do
 
                 exit 0
 
+        elif [[ $a = "MUSIC!!!" ]]
+        then
+
+                $terminal_emulator -e $music_player
+
+                exit 0
+
         elif [[ "$a" = "FROM" ]]
         then
 
@@ -156,6 +172,13 @@ do
 
                 exit 0
 
+        elif [[ "$a" = "EMOJIS" ]]
+        then
+
+                bash ~/all_media/emojis.sh
+
+                exit 0
+
         elif [[ "$a" = "SYSTEM" ]]
         then
 
@@ -167,6 +190,13 @@ do
         then
 
                 $terminal_emulator -e calcurse
+
+                exit 0
+
+        elif [[ $a = "BLACK SCREEN" ]]
+        then
+
+                xset dpms force off
 
                 exit 0
 
@@ -688,6 +718,61 @@ do
                         exit 0
 
                 fi
+
+        #elif [ "$frst" = "$" ]
+        #then
+
+        #        lnght=${#a}
+
+        #        n_com=${a:1:$lnght}
+
+        #        sed -i "s/COM/${n_com}/g" ~/all_media/command_a_v.sh
+
+        #        existing=$(command -v $n_com)
+
+        #        err_rtrn="no"
+
+        #        if [ "$existing" = "" ]
+        #        then
+
+        #                if [ "$sound_effect" = "yes" ] 
+        #                then 
+        #                
+        #                        bash ~/all_media/errorer.sh &
+
+        #                fi
+
+        #                err_rtrn="yes"
+
+        #                a=~/
+
+        #        else
+
+        #                bash ~/all_media/command_a_v.sh 
+
+        #                cat ~/all_media/command_a_v.sh
+
+        #                sed -i "s/${n_com}/COM/g" ~/all_media/command_a_v.sh
+
+        #                #d=$(cat ~/all_media/)
+
+        #        fi
+
+        #        condition=$(if grep -q "$a" ~/all_media/command_a.txt; then echo "yes"; fi)
+
+        #        if [ "$condition" = "" ]
+        #        then
+
+        #                echo $a >> ~/all_media/command_a_v.txt
+
+        #        fi
+
+        #        if [ "$quit_on_run" = "yes" ] && [ "$err_rtrn" = "no" ]
+        #        then
+
+        #                exit 0
+
+        #        fi
 
         elif [ $ext = "jpg" ] || [ $ext = "png" ] || [ $ext = "svg" ] || [ $ext = "gif" ] || [ $ext = "jpeg" ]
         then
