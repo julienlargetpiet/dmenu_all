@@ -7,11 +7,12 @@ text_editor=nvim
 gui_text_editor_status="no" # is your text editor gui based ?
 image_viewer=sxiv
 pdf_viewer=zathura
-browser=brave
+browser=vieb
 media_player=mpv
 terminal_emulator=alacritty
 document_reader=libreoffice
 music_player=mocp
+play_music_with_mocp="yes"
 
 playlist_path=~/ssd1/ms/
 
@@ -266,9 +267,20 @@ do
         elif [[ "$a" = "PLAYLIST" ]]
         then
 
-                a=$playlist_path
+                if [ "$play_music_with_mocp" = "yes" ]
+                then
 
-                echo $a > ~/all_media/save_on_quit.txt
+                        bash ~/all_media/mocp_.sh &
+
+                        exit 0
+
+                else
+
+                        a=$playlist_path
+
+                        echo $a > ~/all_media/save_on_quit.txt
+
+                fi
 
         elif [ $frst = "!" ]
         then
