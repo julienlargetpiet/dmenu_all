@@ -12,6 +12,8 @@ Bash script to manage your files, run application, run custom scripts... in dmen
 
         - scrot (to be able to take screenshots)
 
+        - moc (server to play music)
+
 ## Install
 
 - In ~/
