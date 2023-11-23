@@ -13,12 +13,8 @@ else
 
         a=${a:1:1}
 
-        echo $a | xsel -b
-
-        #echo $a | xclip 
+        echo $a | xclip
 
         exit 0
-
-        bash ~/all_media/all_media_read.sh 
 
 fi
