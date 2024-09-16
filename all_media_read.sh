@@ -130,6 +130,8 @@ do
 
         echo "EMOJIS" >> ~/all_media/all_media_read.txt
 
+        echo "STREAM" >> ~/all_media/all_media_read.txt
+
         if [ "$launcher" = "dmenu" ]
         then
 
@@ -165,6 +167,13 @@ do
                 echo $a >> ~/all_media/history_list.txt
 
                 echo $a > ~/all_media/save_on_quit.txt
+
+        elif [[ "$a" = "STREAM" ]]
+        then
+
+                $media_player $(xclip -o)
+
+                exit 0
 
         elif [[ "$a" = "SCREENSHOT" ]]
         then
